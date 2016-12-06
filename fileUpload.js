@@ -21,7 +21,7 @@ http.createServer(function(req,res){
 		}
 	});   
 
- 	// Do the upload - 'pipe the request to the file'
+ 	// Do the upload - 'pipe' the request to the output file
     req.pipe(newFile);
 
     req.on('end', function() {

@@ -1,5 +1,10 @@
 var http = require('http');
 var fs = require('fs');
+var hello = require('./custom_hello');  // aquiring a custom module 
+var gb = require('./custom_goodbye');
+
+hello();		// then calling the custom module
+gb.goodbye();   // using alternate method for requiring modules
 
 http.createServer((request,response) => {
     response.writeHead(200, {
