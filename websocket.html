@@ -1,0 +1,12 @@
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	var socket = io.connect('http://localhost:8080');
+	socket.on('messages', function(data) {				// listen for messages events (i.e. from 'emit' in the wesocket.js)
+		alert(data.hello);
+	});
+
+	$('#chat_form').submit(function(e) {
+		var message = $('chat_input').val();
+		socket.emit('messages', message);
+	})
+</script>
